@@ -20,7 +20,9 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
         ],
-        'api' => [],
+        'api' => [
+            \Illuminate\Http\Middleware\HandleCors::class,
+        ],
     ];
 
     protected $routeMiddleware = [
