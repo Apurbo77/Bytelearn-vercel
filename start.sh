@@ -4,6 +4,12 @@
 
 echo "Setting up Bytelearn..."
 
+# Check if PHP is available
+if ! command -v php &> /dev/null; then
+    echo "PHP is not installed or not in PATH. Please install PHP."
+    exit 1
+fi
+
 # Install backend dependencies
 cd backend
 composer install --no-dev --optimize-autoloader

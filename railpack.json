@@ -1,11 +1,8 @@
 {
   "build": {
-    "builder": "shell",
-    "commands": [
-      "cd backend && composer install --no-dev --optimize-autoloader",
-      "cd backend && npm install && npm run build",
-      "cd frontend && npm install && npm run build"
-    ]
+    "builder": "php",
+    "buildCommand": "cd backend && composer install --no-dev --optimize-autoloader && npm install && npm run build",
+    "installCommand": "cd frontend && npm install && npm run build"
   },
   "deploy": {
     "startCommand": "cd backend && php artisan serve --host=0.0.0.0 --port=8000",
